@@ -1,5 +1,11 @@
 @import 'nullstyle.scss';
 @import 'mainstyles.scss';
-@import 'header.scss';
-@import 'main.scss';
-@import 'footer.scss';
+@import 'fonts.scss';
+
+// Chunks
+
+@import "./chunk/index.scss";
+
+// Components
+
+@import "./components/index.scss";

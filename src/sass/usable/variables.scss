@@ -1,5 +1,36 @@
-// Colors
 
 
-// Font-size
+:root {
 
+    // Colors
+
+    // Rounded
+
+    --rounded-full: 9999px;
+    --rounded-main: 4px;
+    --rounded-md: 8px;
+    --rounded-lg: 12px;
+    --rounded-xl: 20px;
+
+    // Text size
+
+    --text-4xl: 48px;
+    --text-3xl: 32px;
+    --text-2xl: 28px;
+    --text-xl: 24px;
+    --text-lg: 20px;
+    --text-md: 18px;
+    --text-main: 16px;
+    --text-sm: 14px;
+    --text-mini: 12px;
+}
+
+// Window width
+$break-desk-big: 1420px;
+$break-desk: 1200px;
+
+$break-mobile: 767px;
+
+// Mouse-device
+
+$mouseDevice: '(hover: hover) and (pointer: fine)';

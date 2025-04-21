@@ -1,11 +1,154 @@
-@mixin desk1023 {
-    @media (max-width: 1023px) {
+@import "./variables.scss";
+
+// Width/Height
+
+@mixin width-height($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin width-height-full {
+    @include width-height(100%, 100%);
+}
+
+@mixin fixed-width($w) {
+    width: $w;
+    min-width: $w;
+    max-width: $w;
+}
+
+@mixin fixed-height($h) {
+    height: $h;
+    min-height: $h;
+    max-height: $h;
+}
+
+@mixin fixed-width-height($w, $h) {
+    @include fixed-width($w);
+    @include fixed-height($h);
+}
+
+
+// Ellipsis text
+
+@mixin ellipsis-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Displaying
+
+@mixin fcc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin fcb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin fc_ {
+    display: flex;
+    align-items: center;
+}
+
+@mixin f_c {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin f-col {
+    display: flex;
+    flex-direction: column;
+}
+
+// Window breaks
+
+@mixin break-desk-big {
+    @media (max-width: $break-desk-big) {
         @content;
     }
 }
 
-@mixin mobile {
-    @media (max-width: 767px) {
+@mixin break-desk {
+    @media (max-width: $break-desk) {
+        @content;
+    }
+}
+
+@mixin break-mobile {
+    @media (max-width: $break-mobile) {
         @content;
     }    
+}
+
+// Hover 
+
+@mixin hover {
+    &:hover {
+        @media #{$mouseDevice} {
+          @content;
+        }
+    }
+}
+
+@mixin hover-underline {
+    @include hover {
+        text-decoration: underline;
+    }
+}
+
+@mixin hover-opacity {
+    @include transition;
+    @include hover {
+        opacity: .6;
+    }
+}
+
+// Absolute Positions
+
+@mixin absolute-t-l($t, $l) {
+    position: absolute;
+    top: $t;
+    left: $l;
+}
+
+@mixin absolute-t-r($t, $r) {
+    position: absolute;
+    top: $t;
+    right: $r;
+}
+
+@mixin absolute-b-l($b, $l) {
+    position: absolute;
+    bottom: $b;
+    left: $l;
+}
+
+
+@mixin absolute-b-r($b, $r) {
+    position: absolute;
+    bottom: $b;
+    right: $r;
+}
+
+// Transition
+
+@mixin transition {
+    transition: all ease .6s;
+}
+
+// Button styles
+
+@mixin button-styles {
+    @include fcc;
+    @include transition;
+    @include font-medium;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: var(--text-main);
 }
